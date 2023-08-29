@@ -21,21 +21,12 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	size_t left;
 	size_t right;
 
-	left = 0;
-	right = 0;
-
 	if (tree == NULL)
 		return (0);
 
-	if (tree->left != NULL)
-		left = binary_tree_height(tree->left);
-	else
-		left = 0;
+	left = binary_tree_height(tree->left);
 
-	if (tree->right != NULL)
-		right = binary_tree_height(tree->right);
-	else
-		right = 0;
+	right = binary_tree_height(tree->right);
 
 	return (max(left, right) + 1);
 }
